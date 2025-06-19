@@ -1,7 +1,7 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-`include "spi_interface.sv"
+`include "spi_if.sv"
 `include "spi_dut.sv"
 `include "spi_master.sv"
 `include "spi_slave.sv"
