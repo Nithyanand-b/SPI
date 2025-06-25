@@ -1,0 +1,1 @@
+uvm_pkg C:/questasim64_2024.1/uvm-1.1d 1 spi_interface 1 C:/Users/nithy/Documents/GitHub/SPI/work spi_top_sv_unit C:/Users/nithy/Documents/GitHub/SPI/work 1 spi_interface 1 C:/Users/nithy/Documents/GitHub/SPI/work 

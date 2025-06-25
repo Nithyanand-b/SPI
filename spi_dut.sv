@@ -14,7 +14,7 @@ module top_dut (
 
   wire miso, mosi, cs, sclk;
 
-  spi_master s_m (
+  spi_master spi_master_ (
     .mclk(mclk),
     .reset(reset),
     .load(load_master),
@@ -28,7 +28,7 @@ module top_dut (
     .cs(cs)
   );
 
-  spi_slave s_s (
+  spi_slave spi_slave_ (
     .sclk(sclk),
     .reset(reset),
     .cs(cs),

@@ -17,33 +17,20 @@ import uvm_pkg::*;
 
 module spi_top;
 
-  //---------------------------------------
-  // Clock and reset signal declaration
-  //---------------------------------------
   bit clk;
   bit reset;
 
-  //---------------------------------------
-  // Clock generation
-  //---------------------------------------
   always #5 clk = ~clk;
 
-  //---------------------------------------
-  // Reset generation
-  //---------------------------------------
   initial begin
     reset = 0;
     #5 reset = 1;
   end
 
-  //---------------------------------------
-  // Interface instance
-  //---------------------------------------
+
   spi_interface intf (clk, reset);
 
-  //---------------------------------------
-  // DUT instance
-  //---------------------------------------
+
   top_dut dut (
     .mclk            (intf.mclk),
     .reset           (intf.reset),
@@ -59,11 +46,11 @@ module spi_top;
   );
 
   //---------------------------------------
-  // UVM config and wave dump
+  // UVM config
   //---------------------------------------
   initial begin
     uvm_config_db#(virtual spi_interface)::set(uvm_root::get(), "*", "vif", intf);
-    // enable wave dump here if needed
+   
   end
 
   //---------------------------------------
