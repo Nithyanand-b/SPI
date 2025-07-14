@@ -1,2 +1,0 @@
-var g_data = {"data":[{"n":"work.spi_interface","id":1,"zf":1,"tc":0.00,"s":0.00,"t":0.00},{"n":"work.spi_master","id":5,"zf":1,"tc":0.00,"s":0.00,"b":0.00,"fc":0.00,"t":0.00},{"n":"work.spi_slave","id":6,"zf":1,"tc":0.00,"s":0.00,"b":0.00,"fc":0.00,"t":0.00},{"n":"work.spi_top","id":3,"zf":1,"tc":0.00,"s":0.00,"t":0.00},{"n":"work.spi_top_sv_unit","id":2,"zf":1,"tc":0.00,"s":0.00,"b":0.00,"fc":0.00},{"n":"work.top_dut","id":4,"zf":1,"tc":0.00,"t":0.00,"a":0.00}]};
-processDuData(g_data);

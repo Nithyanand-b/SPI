@@ -1,2 +1,0 @@
-var g_data = {"1":["work.spi_interface",0.00,1],"5":["work.spi_master",0.00,1],"6":["work.spi_slave",0.00,1],"3":["work.spi_top",0.00,1],"2":["work.spi_top_sv_unit",0.00,1],"4":["work.top_dut",0.00,1]};
-processDuLinks(g_data);
