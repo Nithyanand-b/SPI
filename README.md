@@ -1,5 +1,5 @@
 # Functional Verification of an SPI Memory Interface Using UVM
-This project implements a robust and modular **SPI (Serial Peripheral Interface) Controller**. It supports both read and write operations with proper protocol handling using a finite state machine (FSM).
+This project implements a modular **SPI (Serial Peripheral Interface) Controller**. It supports both read and write operations with proper protocol handling using a finite state machine (FSM).
 
 ---
 
