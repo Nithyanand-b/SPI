@@ -9,8 +9,6 @@ This project implements a modular **SPI (Serial Peripheral Interface) Controller
 
 ![SPI Controller Block Diagram](images/Schematic.png)
 
-> **Description**:  
-> This shows how the SPI controller interacts with internal data/address registers, the FSM controller, and the MOSI/MISO interface. Core control signals include `clk`, `rst_n`, `write_en`, `addr`, `data_in`, `data_out`, `done`, and `error`.
 
 ---
 ## ✅ Verification Output Results
