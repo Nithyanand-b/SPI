@@ -9,6 +9,10 @@ This project implements a modular **SPI (Serial Peripheral Interface) Controller
 
 ![SPI Controller Block Diagram](images/Schematic.png)
 
+### 🧩 FSM
+
+![SPI Controller Block Diagram](images/Controller.png)
+
 
 ---
 ## ✅ Verification Output Results
