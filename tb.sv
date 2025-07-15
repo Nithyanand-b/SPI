@@ -1,18 +1,6 @@
 `timescale 1ns / 1ps
 
-import uvm_pkg::*;
-`include "uvm_macros.svh"
-`include "spi_interface.sv"
-`include "dut.sv"
-`include "spi_config.sv"
-`include "transaction.sv"
-`include "sequences.sv"
-`include "driver.sv"
-`include "monitor.sv"
-`include "scoreboard.sv"
-`include "agent.sv"
-`include "env.sv"
-`include "test.sv"
+`include "dut/spi_components.sv"
 
 module tb;
   spi_if vif();

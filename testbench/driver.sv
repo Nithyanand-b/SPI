@@ -5,7 +5,7 @@ class driver extends uvm_driver#(transaction);
       transaction tr;
     
       function new(string path = "drv", uvm_component parent = null);
-        super.new(path, parent);
+         super.new(path, parent);
       endfunction
     
       virtual function void build_phase(uvm_phase phase);
@@ -13,22 +13,24 @@ class driver extends uvm_driver#(transaction);
         super.build_phase(phase);
         tr = transaction::type_id::create("tr");
     
-        if (!uvm_config_db#(virtual spi_if)::get(this, "", "vif", vif))
-          `uvm_error("DRV", "Unable to access Interface");
+        if (!uvm_config_db#(virtual spi_if)::get(this, "", "vif", vif)) begin
+          `uvm_error("DRV", "Unable to access Interface");end
+        else begin
+          `uvm_info(" DRV", "~ [DRIVER] Access Interface is Successful ~ ", UVM_NONE) end
 
       endfunction : build_phase
     
 
       task reset_dut();
 
-        repeat (5) begin
-              vif.rst_n     <= 1'b0;
-              vif.addr      <= 'h0;
-              vif.data_in   <= 'h0;
-              vif.write_en  <= 1'b0;
-              `uvm_info("DRV", "System Reset : Start of Simulation", UVM_MEDIUM);
-              @(posedge vif.clk);
-        end
+           repeat (5) begin
+                 vif.rst_n     <= 1'b0;
+                 vif.addr      <= 'h0;
+                 vif.data_in   <= 'h0;
+                 vif.write_en  <= 1'b0;
+                 `uvm_info("DRV", "System Reset : Start of Simulation", UVM_MEDIUM);
+                 @(posedge vif.clk);
+           end
 
       endtask : reset_dut
     
@@ -62,7 +64,6 @@ class driver extends uvm_driver#(transaction);
                     vif.rst_n     <= 1'b1;
                     vif.write_en  <= 1'b0;
                     vif.addr      <= tr.addr;
-                    vif.data_in   <= tr.data_in;
                     @(posedge vif.clk);
                     `uvm_info("DRV", $sformatf("READ addr:%0d", vif.addr), UVM_NONE);
                     @(posedge vif.done);

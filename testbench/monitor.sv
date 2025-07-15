@@ -14,8 +14,11 @@ class mon extends uvm_monitor;
     super.build_phase(phase);
     tr   = transaction::type_id::create("tr");
     send = new("send", this);
-    if (!uvm_config_db#(virtual spi_if)::get(this, "", "vif", vif))
-      `uvm_error("MON", "Unable to access Interface");
+    if (!uvm_config_db#(virtual spi_if)::get(this, "", "vif", vif)) begin
+      `uvm_error("MON", "Unable to access Interface"); end
+    else begin
+          `uvm_info("MON", "~ [MONITOR] Access Interface is Successful ~ ", UVM_NONE) end
+
   endfunction
 
   virtual task run_phase(uvm_phase phase);

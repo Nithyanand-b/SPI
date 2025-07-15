@@ -16,7 +16,7 @@ class sco extends uvm_scoreboard;
 
   virtual function void write(transaction tr);
     case (tr.op)
-      RESET: `uvm_info("SCO", "Reset detected", UVM_NONE)
+      RESET: `uvm_info("MON", "RESET DETECTED", UVM_NONE)
       WRITE: begin
         if (tr.error)
           `uvm_info("SCO", "WRITE Error Detected", UVM_NONE)
@@ -36,6 +36,6 @@ class sco extends uvm_scoreboard;
         end
       end
     endcase
-    $display("----------------------------------------------------------------------");
+    $display("-------------------------------------------------------------------------------------------------------");
   endfunction
 endclass

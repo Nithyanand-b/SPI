@@ -2,37 +2,55 @@
 `include"spi_memory.sv"
 
 module dut(
-    input write_en, clk, rst_n,
-    input [7:0] addr, data_in,
+
+    input clk,
+    input rst_n,
+
+    input write_en,
+    input [7:0] addr,
+    input [7:0] data_in,
+
     output [7:0] data_out,
-    output done, error
+
+    output done,
+    output error
+
 );
 
 wire cs_n, mosi, miso, ready, op_done;
 
 spi_controller controller_inst (
-    .write_en(write_en),
+
     .clk(clk),
     .rst_n(rst_n),
-    .ready(ready),
-    .op_done(op_done),
+
+    .write_en(write_en),
     .addr(addr),
     .data_in(data_in),
-    .data_out(data_out),
-    .cs_n(cs_n),
+
     .mosi(mosi),
+    .cs_n(cs_n),
+
+    .ready(ready),
+    .op_done(op_done),
     .miso(miso),
+
+    .data_out(data_out),
+
     .done(done),
     .error(error)
 );
 
 spi_memory memory_inst (
+
     .clk(clk),
     .rst_n(rst_n),
-    .cs_n(cs_n),
+    
+    .mosi(miso),   // Memory's MOSI is Controller's MISO
     .miso(mosi),  // Controller's MOSI is Memory's MISO
     .ready(ready),
-    .mosi(miso),   // Memory's MOSI is Controller's MISO
+
+    .cs_n(cs_n),
     .op_done(op_done)
 );
 
