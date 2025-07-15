@@ -1,10 +1,9 @@
-# SPI Controller (Verilog)
-
-This project implements a robust and modular **SPI (Serial Peripheral Interface) Controller** in Verilog. It supports both read and write operations with proper protocol handling using a finite state machine (FSM).
+# Functional Verification of an SPI Memory Interface Using UVM
+This project implements a robust and modular **SPI (Serial Peripheral Interface) Controller**. It supports both read and write operations with proper protocol handling using a finite state machine (FSM).
 
 ---
 
-## 📸 System Overview
+## 📸 
 
 ### 🧩 SPI Controller Block Diagram (DUT)
 
@@ -23,11 +22,4 @@ The SPI controller was successfully verified using a UVM-based testbench. Below 
 ![](images/3.png)
 
 
-
-
 ---
-
-...
-
-# (The rest of the README remains unchanged. Refer to the previous message for full content.)
-
