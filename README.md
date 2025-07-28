@@ -4,7 +4,7 @@ This project implements a modular **SPI (Serial Peripheral Interface) Controller
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 The SPI controller acts as a **master** and communicates with a **memory slave** module over an SPI interface. The controller supports:
 
@@ -17,13 +17,13 @@ This project also features **functional verification** using the **Universal Ver
 
 ---
 
-## 🧩 SPI Controller Block Diagram
+## SPI Controller Block Diagram
 
 ![SPI Controller Block Diagram](images/Schematic.png)
 
 ---
 
-## 🔄 FSM (Finite State Machine) Design
+## FSM (Finite State Machine) Design
 
 The controller uses an FSM to manage operation sequences:
 
@@ -40,15 +40,15 @@ The controller uses an FSM to manage operation sequences:
 
 ---
 
-## ✅ Verification Output Results
+## Verification Output Results
 
 The following test scenarios were verified:
 
-- ✔️ Write Operation
-- ✔️ Read Operation
-- ✔️ Read After Write (RAW)
-- ✔️ Invalid Address Handling
-- ✔️ Protocol Compliance
+- Write Operation
+- Read Operation
+- Read After Write (RAW)
+- Invalid Address Handling
+- Protocol Compliance
 
 Below are some simulation waveforms:
 
