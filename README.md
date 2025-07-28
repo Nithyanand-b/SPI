@@ -14,7 +14,7 @@ This project also features **functional verification** using the **Universal Ver
 
 ## SPI Block Diagram
 
-![SPI Block Diagram](images/Schematic.png)
+![SPI Block Diagram](images/Schematic_.png)
 
 ---
 
