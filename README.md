@@ -1,9 +1,5 @@
 # Functional Verification of an SPI Memory Interface Using UVM
 
-This project implements a modular **SPI (Serial Peripheral Interface) Controller** and verifies its functionality using a **UVM-based testbench**. The controller supports both **read and write operations** and ensures protocol correctness through a finite state machine (FSM)-based architecture.
-
----
-
 ## Project Overview
 
 The SPI controller acts as a **master** and communicates with a **memory slave** module over an SPI interface. The controller supports:
@@ -16,9 +12,9 @@ This project also features **functional verification** using the **Universal Ver
 
 ---
 
-## SPI Controller Block Diagram
+## SPI Block Diagram
 
-![SPI Controller Block Diagram](images/Schematic.png)
+![SPI Block Diagram](images/Schematic.png)
 
 ---
 
