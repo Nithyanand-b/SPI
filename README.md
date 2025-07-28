@@ -11,7 +11,6 @@ The SPI controller acts as a **master** and communicates with a **memory slave**
 - 8-bit **address** and **data**.
 - Serialized **read** and **write** operations.
 - Protocol-level control with `CS_N`, `MOSI`, `MISO`, and status signals [`error`, `done`].
-- Robust **error handling** and status reporting.
 
 This project also features **functional verification** using the **Universal Verification Methodology (UVM)** framework.
 
