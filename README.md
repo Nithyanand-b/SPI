@@ -1,33 +1,56 @@
-# SPI Controller (Verilog)
+# Functional Verification of an SPI Memory Interface Using UVM
 
-This project implements a robust and modular **SPI (Serial Peripheral Interface) Controller** in Verilog. It supports both read and write operations with proper protocol handling using a finite state machine (FSM).
+## Project Overview
 
----
+The SPI controller acts as a **master** and communicates with a **memory slave** module over an SPI interface. The controller supports:
 
-## 📸 System Overview
+- 8-bit **address** and **data**.
+- Serialized **read** and **write** operations.
+- Protocol-level control with `CS_N`, `MOSI`, `MISO`, and status signals [`error`, `done`].
 
-### 🧩 SPI Controller Block Diagram (DUT)
-
-![SPI Controller Block Diagram](images/Schematic.png)
-
-> **Description**:  
-> This shows how the SPI controller interacts with internal data/address registers, the FSM controller, and the MOSI/MISO interface. Core control signals include `clk`, `rst_n`, `write_en`, `addr`, `data_in`, `data_out`, `done`, and `error`.
-
----
-## ✅ Verification Output Results
-
-The SPI controller was successfully verified using a UVM-based testbench. Below are the validated scenarios and observed outcomes:
-
-![](images/1.png)
-![](images/2.png)
-![](images/3.png)
-
-
-
+This project also features **functional verification** using the **Universal Verification Methodology (UVM)** framework.
 
 ---
 
-...
+## SPI Block Diagram
 
-# (The rest of the README remains unchanged. Refer to the previous message for full content.)
+![SPI Block Diagram](images/Schematic_.png)
+
+---
+
+## FSM (Finite State Machine) Design
+
+The controller uses an FSM to manage operation sequences:
+
+- `IDLE`: Wait for transaction.
+- `LOAD`: Load input data into internal shift register.
+- `CHECK_OP`: Check for read/write enable.
+- `SEND_DATA`: Serially transmit address and data.
+- `SEND_ADDR`: Transmit address for read.
+- `CHECK_READY [READ_DATA 1]`: Wait for memory to assert ready.
+- `READ_DATA 2`: Receive read data from memory.
+- `ERROR`: Triggered when an invalid operation or address occurs.
+
+![FSM Diagram](images/Controller.png)
+
+---
+
+## Verification Output Results
+
+The following test scenarios were verified:
+
+- Write Operation
+- Read Operation
+- Read After Write (RAW)
+- Invalid Address Handling
+- Protocol Compliance
+
+Below are some simulation waveforms:
+
+
+![Write Transaction](images/1.png)
+![Read Transaction](images/2.png)
+![Read After Write](images/3.png)
+
+---
 
